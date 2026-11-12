@@ -8,6 +8,7 @@ import { installProviders } from './app/providers'
 import './styles/tokens.css'
 import './styles/base.css'
 import './styles/layout.css'
+import './styles/details.css'
 import './styles/motion.css'
 const app = createApp(App)
 installProviders(app)
