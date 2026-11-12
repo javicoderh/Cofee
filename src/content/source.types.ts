@@ -1,0 +1,1 @@
+export interface SourceReference { readonly id: string; readonly title: string; readonly links?: readonly { readonly label: string; readonly url: string }[]; readonly localFile?: string; readonly consultedAt: string; readonly scope: string }

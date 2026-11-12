@@ -1,0 +1,3 @@
+<script setup lang="ts">defineProps<{ items: readonly { label: string; value: string; unit: string }[] }>()</script>
+<template><dl class="metrics"><div v-for="item in items" :key="item.label"><dt>{{ item.label }}</dt><dd>{{ item.value }}<span>{{ item.unit }}</span></dd></div></dl></template>
+<style scoped>.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(95px,1fr));margin:0 0 28px;background:var(--color-mist);border-radius:10px;padding:20px 12px;gap:16px}.metrics div{text-align:center}dt{color:var(--color-forest);font-size:14px;margin-bottom:8px}dd{margin:0;font-size:30px;font-weight:600;letter-spacing:-.06em;font-variant-numeric:tabular-nums}dd span{font-size:15px;font-weight:400;margin-left:4px;letter-spacing:0}</style>

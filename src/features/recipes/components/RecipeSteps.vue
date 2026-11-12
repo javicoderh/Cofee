@@ -1,0 +1,3 @@
+<script setup lang="ts">defineProps<{ steps: readonly string[] }>()</script>
+<template><section><h3 class="section-title">La preparación</h3><ol class="steps"><li v-for="(step,index) in steps" :key="step" :data-reading-anchor="`step-${index}`"><span aria-hidden="true">{{ String(index+1).padStart(2,'0') }}</span><p>{{ step }}</p></li></ol></section></template>
+<style scoped>.steps{list-style:none;padding:0;margin:0 0 28px;counter-reset:steps}.steps li{display:flex;gap:16px;padding:8px 0;margin:0 0 8px;line-height:1.6}.steps span{width:32px;height:32px;flex:none;display:grid;place-items:center;background:var(--color-paper);border-radius:50%;font-size:12px;color:var(--color-caramel)}.steps p{margin:0}</style>

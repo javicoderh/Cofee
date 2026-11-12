@@ -1,0 +1,7 @@
+<script setup lang="ts">
+import type { PreparationItem } from '../domain/interview.types'
+defineProps<{ items: readonly PreparationItem[]; selectedIds: readonly string[] }>()
+defineEmits<{ toggle: [id: string] }>()
+</script>
+<template><section class="checklist"><div class="checklist-head"><h2>Tu preparación, a tu ritmo.</h2><span>{{ selectedIds.length }} de {{ items.length }} temas preparados</span></div><progress :value="selectedIds.length" :max="items.length" :aria-label="`${selectedIds.length} de ${items.length} temas preparados`" /><label v-for="item in items" :key="item.id"><input type="checkbox" :checked="selectedIds.includes(item.id)" @change="$emit('toggle',item.id)"><span>{{ item.label }}</span></label><p class="muted">Este avance es un marcador de estudio personal. Se guarda en este dispositivo y navegador.</p></section></template>
+<style scoped>.checklist{padding:28px;background:var(--color-mist);border-radius:12px;margin:48px 0}.checklist-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}.checklist-head h2{font-size:30px;margin:0}progress{width:100%;height:6px;accent-color:var(--color-forest);margin:24px 0}label{display:flex;gap:14px;padding:12px 0;min-height:48px;cursor:pointer}input{width:22px;height:22px;accent-color:var(--color-forest);flex:none;margin-top:2px}.muted{font-size:14px;margin-bottom:0}@media(max-width:767px){.checklist{padding:20px}}</style>
